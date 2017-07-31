@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content">
+    <div class="container">
+        <diw class="row">
+            <div class="col-md-12">
+                <div class="qaynaq">
+                    <div class="qaynaq-body">
+                        <h2>Qaynaq əlavə edin</h2>
+                        <div class="qaynaq-info">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="qaynaq-categories">
+                                        <!--qaynaq kateqoriyası  -->
+                                        <label>Qaynaq kateqoriyasını seçin:</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" aria-label="..." placeholder="kateqoriya">
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li><a href="#">HTML</a></li>
+                                                    <li><a href="#">CSS</a></li>
+                                                    <li><a href="#">Javascript</a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- /btn-group -->
+                                        </div>
+                                        <!-- /input-group -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="qaynaq-head">
+                                        <!--qaynaq bawliqi  -->
+                                        <label>Qaynaq başlığı</label>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" aria-label="...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!--qaynaq mətni  -->
+                                    <div class="qaynaq-text">
+                                        <label>Qaynaq mətni</label>
+                                        <textarea name="editor1"></textarea>
+                                        <button class="btn btn-default" type="submit">Qaynaqı göndər</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </diw>
+    </div>
+</section>
+
+<script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
+<script>
+        CKEDITOR.replace('editor1');
+</script>
+

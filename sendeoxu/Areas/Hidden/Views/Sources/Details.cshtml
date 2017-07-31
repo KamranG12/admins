@@ -1,0 +1,67 @@
+﻿@model sendeoxu.Models.Source
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Hidden/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Source</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.read_count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.read_count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kateqoriya_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kateqoriya_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.fullname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.fullname)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

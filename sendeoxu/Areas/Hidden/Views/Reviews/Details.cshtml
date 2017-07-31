@@ -1,0 +1,51 @@
+﻿@model sendeoxu.Models.Review
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Hidden/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Review</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.like_count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.like_count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dislike_count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dislike_count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Source.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Source.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.fullname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.fullname)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

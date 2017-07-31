@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Admiry - Responsive Flat Admin Dashboard</title>
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="ThemeDesign" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="~/Areas/Hidden/Public/images/favicon.ico">
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="~/Areas/Hidden/Public/plugins/morris/morris.css">
+    <link href="~/Areas/Hidden/Public/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Areas/Hidden/Public/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="~/Areas/Hidden/Public/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <div class="left side-menu">
+        <button type="button" class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect">
+            <i class="ion-close"></i>
+        </button>
+        <!-- LOGO -->
+        <div class="topbar-left">
+            <div class="text-center">
+                <!--<a href="index.html" class="logo">Admiry</a>-->
+                <a href="index.html" class="logo"><img src="~/Areas/Hidden/Public/images/logo.png" height="42" alt="logo"></a>
+            </div>
+        </div>
+        <div class="sidebar-inner slimscrollleft">
+            <div class="user-details">
+                <div class="text-center">
+                    <img src="~/Areas/Hidden/Public/images/users/avatar-1.jpg" alt="" class="rounded-circle">
+                </div>
+                <div class="user-info">
+                    <h4 class="font-16">Polad Kamran</h4>
+                </div>
+            </div>
+            <div id="sidebar-menu">
+                <ul>
+                    <li>@Html.ActionLink("Admins", "index", "admins")</li>
+                    <li>@Html.ActionLink("Users", "index", "users")</li>
+                    <li>@Html.ActionLink("Comments", "index", "comments")</li>
+                    <li>@Html.ActionLink("Categories", "index", "categories")</li>
+                    <li>@Html.ActionLink("Reviews", "index", "reviews")</li>
+                    <li>@Html.ActionLink("RelCatAndSor", "index", "RelCatAndSors")</li>
+                    <li>@Html.ActionLink("Sources", "index", "sources")</li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div> <!-- end sidebarinner -->
+    </div>
+    <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+            <!-- Top Bar Start -->
+            <div class="topbar">
+                <nav class="navbar-custom">
+                    <ul class="list-inline float-right mb-0">
+                        <li class="list-inline-item dropdown notification-list">
+                            <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
+                               aria-haspopup="false" aria-expanded="false">
+                                <i class="ion-ios7-bell noti-icon"></i>
+                                <span class="badge badge-success noti-icon-badge">3</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5><span class="badge badge-danger float-right">87</span>Notification</h5>
+                                </div>
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
+                                    <p class="notify-details"><b>Your order is placed</b><small class="text-muted">Dummy text of the printing and typesetting industry.</small></p>
+                                </a>
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-primary"><i class="mdi mdi-message"></i></div>
+                                    <p class="notify-details"><b>New Message received</b><small class="text-muted">You have 87 unread messages</small></p>
+                                </a>
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-primary"><i class="mdi mdi-martini"></i></div>
+                                    <p class="notify-details"><b>Your item is shipped</b><small class="text-muted">It is a long established fact that a reader will</small></p>
+                                </a>
+                                <!-- All-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    View All
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-inline-item dropdown notification-list">
+                            <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
+                               aria-haspopup="false" aria-expanded="false">
+                                <img src="~/Areas/Hidden/Public/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                <a class="dropdown-item" href="@Url.Action("logout","admin")"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list-inline menu-left mb-0">
+                        <li class="list-inline-item">
+                            <button type="button" class="button-menu-mobile open-left waves-effect">
+                                <i class="ion-navicon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </nav>
+            </div>
+            @RenderBody()
+        </div> <!-- content -->
+    </div>
+    <script src="~/Areas/Hidden/Public/js/jquery.min.js"></script>
+    <script src="~/Areas/Hidden/Public/js/tether.min.js"></script><!-- Tether for Bootstrap -->
+    <script src="~/Areas/Hidden/Public/js/bootstrap.min.js"></script>
+    <script src="~/Areas/Hidden/Public/js/modernizr.min.js"></script>
+    <script src="~/Areas/Hidden/Public/js/detect.js"></script>
+    <script src="~/Areas/Hidden/Public/js/fastclick.js"></script>
+    <script src="~/Areas/Hidden/Public/js/jquery.slimscroll.js"></script>
+    <script src="~/Areas/Hidden/Public/js/jquery.blockUI.js"></script>
+    <script src="~/Areas/Hidden/Public/js/waves.js"></script>
+    <script src="~/Areas/Hidden/Public/js/jquery.nicescroll.js"></script>
+    <script src="~/Areas/Hidden/Public/js/jquery.scrollTo.min.js"></script>
+    <!--Morris Chart-->
+    <script src="~/Areas/Hidden/Public/plugins/morris/morris.min.js"></script>
+    <script src="~/Areas/Hidden/Public/plugins/raphael/raphael-min.js"></script>
+    <script src="~/Areas/Hidden/Public/pages/dashborad.js"></script>
+    <!-- App js -->
+    <script src="~/Areas/Hidden/Public/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<sendeoxu.Models.RelCatAndSor>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Hidden/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Relation Categories and Sources</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.kateqoriya_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Source.title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.kateqoriya_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Source.title)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

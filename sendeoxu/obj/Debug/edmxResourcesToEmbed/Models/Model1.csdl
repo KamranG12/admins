@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FirstProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kateqoriya_name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="RelCatAndSors" Relationship="Self.FK_RelKatAndTop_Kateqoriya" FromRole="Categories" ToRole="RelCatAndSor" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="topic_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Source" Relationship="Self.FK_Comment_Topic" FromRole="Comment" ToRole="Sources" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Comment_Users" FromRole="Comment" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="RelCatAndSor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kateqoriya_id" Type="Int32" Nullable="false" />
+    <Property Name="topic_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_RelKatAndTop_Kateqoriya" FromRole="RelCatAndSor" ToRole="Categories" />
+    <NavigationProperty Name="Source" Relationship="Self.FK_RelKatAndTop_Topic" FromRole="RelCatAndSor" ToRole="Sources" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="like_count" Type="Int32" />
+    <Property Name="dislike_count" Type="Int32" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="topic_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Source" Relationship="Self.FK_Review_Topic" FromRole="Review" ToRole="Sources" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Review_Users" FromRole="Review" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Source">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="read_count" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="kateqoriya_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_Topic" FromRole="Sources" ToRole="Comment" />
+    <NavigationProperty Name="RelCatAndSors" Relationship="Self.FK_RelKatAndTop_Topic" FromRole="Sources" ToRole="RelCatAndSor" />
+    <NavigationProperty Name="Reviews" Relationship="Self.FK_Review_Topic" FromRole="Sources" ToRole="Review" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Topic_Users" FromRole="Sources" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fullname" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="profil_picture" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_Users" FromRole="Users" ToRole="Comment" />
+    <NavigationProperty Name="Reviews" Relationship="Self.FK_Review_Users" FromRole="Users" ToRole="Review" />
+    <NavigationProperty Name="Sources" Relationship="Self.FK_Topic_Users" FromRole="Users" ToRole="Sources" />
+  </EntityType>
+  <Association Name="FK_RelKatAndTop_Kateqoriya">
+    <End Role="Categories" Type="Self.Category" Multiplicity="1" />
+    <End Role="RelCatAndSor" Type="Self.RelCatAndSor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="RelCatAndSor">
+        <PropertyRef Name="kateqoriya_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Topic">
+    <End Role="Sources" Type="Self.Source" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sources">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="topic_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RelKatAndTop_Topic">
+    <End Role="Sources" Type="Self.Source" Multiplicity="1" />
+    <End Role="RelCatAndSor" Type="Self.RelCatAndSor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sources">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="RelCatAndSor">
+        <PropertyRef Name="topic_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Review_Topic">
+    <End Role="Sources" Type="Self.Source" Multiplicity="1" />
+    <End Role="Review" Type="Self.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sources">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="topic_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Review_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Review" Type="Self.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Topic_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Sources" Type="Self.Source" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Sources">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FirstProjectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="RelCatAndSors" EntityType="Self.RelCatAndSor" />
+    <EntitySet Name="Reviews" EntityType="Self.Review" />
+    <EntitySet Name="Sources" EntityType="Self.Source" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_RelKatAndTop_Kateqoriya" Association="Self.FK_RelKatAndTop_Kateqoriya">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="RelCatAndSor" EntitySet="RelCatAndSors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Topic" Association="Self.FK_Comment_Topic">
+      <End Role="Sources" EntitySet="Sources" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Users" Association="Self.FK_Comment_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RelKatAndTop_Topic" Association="Self.FK_RelKatAndTop_Topic">
+      <End Role="Sources" EntitySet="Sources" />
+      <End Role="RelCatAndSor" EntitySet="RelCatAndSors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Review_Topic" Association="Self.FK_Review_Topic">
+      <End Role="Sources" EntitySet="Sources" />
+      <End Role="Review" EntitySet="Reviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Review_Users" Association="Self.FK_Review_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Review" EntitySet="Reviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Topic_Users" Association="Self.FK_Topic_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Sources" EntitySet="Sources" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

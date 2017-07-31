@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4ee0a10d86104e949847f550afe14734" Name="Diagram1">
+        <EntityTypeShape EntityType="FirstProjectModel.Admin" Width="1.5" PointX="1" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FirstProjectModel.Category" Width="1.5" PointX="5.375" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FirstProjectModel.Comment" Width="1.5" PointX="2.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FirstProjectModel.RelCatAndSor" Width="1.5" PointX="7.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FirstProjectModel.Review" Width="1.5" PointX="4" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FirstProjectModel.Source" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FirstProjectModel.User" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="FirstProjectModel.FK_RelKatAndTop_Kateqoriya" ManuallyRouted="false" />
+        <AssociationConnector Association="FirstProjectModel.FK_Comment_Topic" ManuallyRouted="false" />
+        <AssociationConnector Association="FirstProjectModel.FK_Comment_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FirstProjectModel.FK_RelKatAndTop_Topic" ManuallyRouted="false" />
+        <AssociationConnector Association="FirstProjectModel.FK_Review_Topic" ManuallyRouted="false" />
+        <AssociationConnector Association="FirstProjectModel.FK_Review_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="FirstProjectModel.FK_Topic_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

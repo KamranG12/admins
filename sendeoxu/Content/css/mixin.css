@@ -1,0 +1,25 @@
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(../fonts/Roboto-Regular.ttf); }
+@font-face {
+  font-family: Roboto-Bold;
+  src: url(../fonts/Roboto-Bold.ttf); }
+@font-face {
+  font-family: BebasNeue-Bold;
+  src: url(../fonts/BebasNeue-Bold.ttf); }
+ol,
+ul {
+  list-style: none; }
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+a {
+  text-decoration: none; }
+
+/*# sourceMappingURL=mixin.css.map */

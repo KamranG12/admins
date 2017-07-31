@@ -1,0 +1,1675 @@
+@import 'fonts';
+@import 'mixin';
+@import 'variable';
+@import 'reset';
+body {
+    font-family: Roboto-Regular;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+// #################### HOME PAGE START ###############
+//Main Header
+header {
+    .panel {
+        border-radius: 0;
+        border: none;
+    }
+    .panel-body {
+        border-bottom: 1px solid $gray;
+    }
+    .header-upper {
+        //padding: 15px 0;
+        .logo {
+            @include mQ(320px) {
+                margin-top: 10px;
+            }
+            @include mQ(480px) {
+                margin-top: 10px;
+                text-align: center;
+            }
+            @include mQ(768px) {
+                margin-top: 10px;
+                text-align: center;
+            }
+            img {
+                width: 100%;
+                @include mQ(480px) {
+                    width: 70%;
+                }
+                @include mQ(768px) {
+                    width: 70%;
+                }
+            }
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            //background-color: rgb(0,0,0);
+            background-color: rgba(40, 57, 94, 0.4);
+            /* Modal Content */
+            .modal-content {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                /* The Close Button */
+                .close {
+                    color: $DarkTangerine;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                    &:hover,
+                    &:focus {
+                        color: $CatalinaBlue;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .profil {
+            width: 100px;
+            float: right;
+            margin-top: 25px;
+            @include mQ(320px) {
+                margin: 10px 0;
+            }
+            @include mQ(480px) {
+                margin: 10px 0;
+            }
+            @include mQ(768px) {
+                margin: 10px 0;
+            }
+            #btn-profil {
+                padding: 11px 20px;
+                line-height: 24px;
+                text-align: center;
+                //    border:1px solid $CatalinaBlue;
+                color: $CatalinaBlue;
+                cursor: pointer;
+                span {
+                    font-size: 18px;
+                    font-weight: bold;
+                    padding: 0;
+                    margin: 0;
+                    &:before {
+                        font-family: FontAwesome;
+                        content: "\f007";
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+        #profil-form {
+            padding: 20px;
+            //border: 1px solid $CatalinaBlue;
+            margin-top: 40px;
+            .sign-in {
+                border-bottom: 1px solid $CatalinaBlue;
+                button {
+                    width: 100%;
+                }
+                .form-control {
+                    border: 1px solid $DarkTangerine;
+                    color: $CatalinaBlue;
+                }
+                .btn-default {
+                    border-color: $DarkTangerine;
+                    color: $CatalinaBlue;
+                    &:hover {
+                        background-color: $CatalinaBlue;
+                        border-color: $CatalinaBlue;
+                        color: $ColorWhite;
+                    }
+                }
+            }
+            .sign-up {
+                padding-top: 20px;
+                a {
+                    width: 100%;
+                }
+                .btn-default {
+                    border-color: $DarkTangerine;
+                    color: $CatalinaBlue;
+                    &:hover {
+                        background-color: $CatalinaBlue;
+                        border-color: $CatalinaBlue;
+                        color: $ColorWhite;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// navbar menu start
+.home {
+    background: #ffae11;
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 26px;
+    i {
+        color: white;
+    }
+}
+
+.nav-menu {
+    li {
+        a {
+            padding: 22px 25px 22px 25px;
+            font-size: 18px;
+        }
+    }
+}
+
+.DarkTangerine {
+    color: #ffae11;
+    font-weight: bold;
+}
+
+.ColorWhite {
+    color: $ColorWhite;
+}
+
+.btn-search-nav {
+    width: 70px;
+    height: 70px;
+    border-radius: 0;
+    background: #ffae11;
+    border: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.form-nav {
+    margin: 0;
+    .input-form {
+        height: 70px;
+        border-radius: 0;
+        border: 1px solid #203259;
+        outline: none;
+        background: #203259;
+        color: white;
+        padding: 7px 12px 7px 20px;
+    }
+}
+
+.navbarToggle {
+    background: #ffae11;
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+}
+
+// navbar menu end
+//Section Content
+.content {
+    background: url('../img/background-content.png');
+    padding: 30px 0;
+    .categories {
+        @include mQ(320px) {
+            text-align: center;
+        }
+        @include mQ(480px) {
+            text-align: center;
+        }
+        @include mQ(768px) {
+            text-align: center;
+        }
+        padding: 20px;
+        background: $ColorWhite;
+        border: 1px solid $gray;
+        margin-bottom: 25px;
+        h1 {
+            font-family: Roboto-Bold;
+            text-transform: uppercase;
+            font-size: 25px;
+            text-align: center;
+            line-height: 30px;
+            margin: 0;
+        }
+        .seperator {
+            @include seperator;
+            @include mQ(320px) {
+                margin: 15px auto;
+            }
+            @include mQ(480px) {
+                margin: 15px auto;
+            }
+            @include mQ(768px) {
+                margin: 15px auto;
+            }
+        }
+        ul {
+            li {
+                border-bottom: 1px solid $gray;
+                padding: 5px 0;
+                &:last-child {
+                    border-bottom: none;
+                }
+                a {
+                    font-size: 16px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    .section-center {
+        @include mQ(320px) {
+            margin-top: 25px;
+        }
+        @include mQ(480px) {
+            margin-top: 25px;
+        }
+        @include mQ(768px) {
+            margin-top: 25px;
+        }
+        margin:10px 15px;
+        .last-source {
+            border-bottom: 1px solid $DarkTangerine;
+            padding-bottom: 5px;
+        }
+        .source {
+            padding-bottom: 25px;
+            .source-text-header {
+                ul {
+                    li {
+                        display: inline-block;
+                        font-size: 10px;
+                        color: $CatalinaBlue;
+                    }
+                }
+                .source-person {
+                    &::before {
+                        font-family: FontAwesome;
+                        content: "\f007";
+                        padding-right: 5px;
+                    }
+                    &::after {
+                        font-family: FontAwesome;
+                        content: " / ";
+                        padding-left: 5px;
+                    }
+                }
+                .source-date {
+                    &::before {
+                        font-family: FontAwesome;
+                        content: "\f073";
+                        padding-right: 5px;
+                    }
+                    &::after {
+                        font-family: FontAwesome;
+                        content: " / ";
+                        padding-left: 5px;
+                    }
+                }
+                .source-file {
+                    &::before {
+                        font-family: FontAwesome;
+                        content: "\f15b";
+                        padding-right: 5px;
+                    }
+                }
+            }
+            .text-body {
+                margin-top: 10px;
+                p {
+                    margin: 5px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    font-family: Roboto-Regular;
+                }
+                a {
+                    float: right;
+                    color: $DarkTangerine;
+                }
+            }
+        }
+        .source-pagination {
+            text-align: center;
+            margin-top: 15px;
+            .pagination>.active>span {
+                background-color: $DarkTangerine;
+                border-color: $DarkTangerine;
+            }
+        }
+    }
+    //user retinq
+    .user-reting {
+        padding: 15px;
+        background: $ColorWhite;
+        border: 1px solid $gray;
+        h1 {
+            font-family: Roboto-Bold;
+            text-transform: uppercase;
+            font-size: 21px;
+            text-align: center;
+            line-height: 30px;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+        .seperator {
+            @include seperator;
+        }
+        .reting-slider {
+            position: relative;
+            .owl-dots {
+                position: absolute;
+                top: 0;
+                right: 10px;
+                .owl-dot {
+                    width: 15px;
+                    height: 15px;
+                    background: $DarkTangerine;
+                    margin-right: 7px;
+                    float: left;
+                    border-radius: 50%;
+                }
+                .active {
+                    background: $CatalinaBlue;
+                }
+            }
+            .reting-info {
+                margin-top: 20px;
+                padding: 10px;
+                ul {
+                    li {
+                        margin: 0 0 20px 0;
+                        border-bottom: 1px solid $gray;
+                        height: 85px;
+                        .rtg-img {
+                            position: relative;
+                            float: left;
+                            img {
+                                width: 70px;
+                                height: 70px;
+                                margin-right: 10px;
+                            }
+                            span {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                background: $DarkTangerine;
+                                color: $ColorWhite;
+                                text-align: center;
+                                width: 20px;
+                                height: 20px;
+                                font-size: 11px;
+                                padding: 3px 0 3px 0;
+                            }
+                        }
+                        a {
+                            display: block;
+                            line-height: 18px;
+                            margin: 0 0 5px 0;
+                            font-size: 14px;
+                        }
+                        .rtg-num {
+                            line-height: 18px;
+                            font-size: 16px;
+                            color: $CatalinaBlue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Footer
+footer {
+    background: $CatalinaBlue;
+    padding: 15px 0;
+    .copyright {
+        @include mQ(320px) {
+            text-align: center;
+        }
+        @include mQ(480px) {
+            text-align: center;
+        }
+        @include mQ(768px) {
+            text-align: center;
+        }
+        p {
+            color: $ColorWhite;
+            font-size: 14px;
+            font-weight: 400;
+            padding-top: 10px;
+        }
+        .cop {
+            color: $DarkTangerine;
+        }
+    }
+    .social {
+        @include mQ(320px) {
+            padding-left: 50px;
+        }
+        @include mQ(480px) {
+            text-align: center;
+        }
+        @include mQ(768px) {
+            text-align: center;
+        }
+        padding-left: 45px;
+        ul {
+            li {
+                float: left;
+                padding-left: 15px;
+                a {
+                    font-size: 25px;
+                    color: #6784af;
+                    &:hover {
+                        color: $DarkTangerine;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// btn scroll top
+.scroll-top {
+    display: none;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    font-size: 26px;
+    background: $DarkTangerine;
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
+    -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    color: #fff;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    &:before {
+        font-family: FontAwesome;
+        content: "\f106";
+        outline: none;
+    }
+    &:hover {
+        color: white;
+        background: $CatalinaBlue;
+        text-decoration: none;
+    }
+}
+
+// #################### HOME PAGE END ###############
+// #################### about PAGE start ###############
+.about-body {
+    @include section-border;
+}
+
+// #################### about PAGE END ###############
+// #################### registration PAGE start ###############
+.registration {
+    @include section-border;
+}
+
+// #################### registration PAGE END ###############
+// #################### qaynaq PAGE start ###############
+.qaynaq {
+    @include section-border;
+    .qaynaq-body {
+        .qaynaq-info {
+            margin: 20px 0;
+            .qaynaq-categories {
+                margin: 20px 0;
+            }
+            .qaynaq-text {
+                .btn-default {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+}
+
+// #################### qaynaq PAGE END ###############
+// #################### qaynaq read start ###############
+.qaynaq-read {
+    @include section-border;
+    .qaynaq-read-body {
+        margin-bottom: 20px;
+        ul {
+            li {
+                display: inline-block;
+                font-size: 10px;
+                color: $CatalinaBlue;
+            }
+        }
+        .qrb-person {
+            &::before {
+                font-family: FontAwesome;
+                content: "\f007";
+                padding-right: 5px;
+            }
+            &::after {
+                font-family: FontAwesome;
+                content: " / ";
+                padding-left: 5px;
+            }
+        }
+        .qrb-date {
+            &::before {
+                font-family: FontAwesome;
+                content: "\f073";
+                padding-right: 5px;
+            }
+            &::after {
+                font-family: FontAwesome;
+                content: " / ";
+                padding-left: 5px;
+            }
+        }
+        .qrb-file {
+            &::before {
+                font-family: FontAwesome;
+                content: "\f15b";
+                padding-right: 5px;
+            }
+        }
+    }
+    .qaynaq-text {
+        img {
+            width: 100%;
+        }
+        p {
+            padding: 15px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    .panel-default {
+        border-color: $DarkTangerine;
+    }
+    .panel {
+        border-radius: 0;
+        background: $DarkTangerine;
+        .panel-body {
+            padding: 10px;
+            .qaynaq-read-like {
+                float: left;
+                margin-right: 15px;
+            }
+            .qaynaq-read-count {
+                padding-top: 7px;
+            }
+        }
+    }
+}
+
+.comments {
+    .panel-default {
+        border-color: none;
+    }
+    .panel {
+        border-radius: 0;
+        background: $ColorWhite;
+        border: none;
+        .panel-body {
+            padding: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            border-bottom: 1px solid $DarkTangerine;
+            font-size: 18px;
+            ;
+        }
+    }
+    .post-comments {
+        padding: 30px 15px;
+        .post-comments-list {
+            margin: 0;
+            list-style: none;
+            padding: 0 0 20px;
+            border-bottom: 1px dotted #dcdcdc;
+            .post-comments-list-item {
+                .post-comments-item-body {
+                    margin-bottom: 30px;
+                    .post-comments-item-avatar {
+                        max-width: 100px;
+                        float: left;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .post-comments-item-right {
+                        margin-left: 120px;
+                        .post-comments-item-reply {
+                            float: right;
+                        }
+                        .post-comments-item-info {
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+                .post-comments-children {
+                    padding: 0;
+                    list-style: none;
+                    margin: 0 0 0 40px;
+                }
+            }
+        }
+        .post-comments-respond {
+            padding-top: 50px;
+        }
+    }
+}
+
+.similar-sources {
+    @include section-border;
+    padding: 15px;
+    margin-bottom: 25px;
+    h3 {
+        font-family: Roboto-Bold;
+        text-transform: uppercase;
+        font-size: 20px;
+        text-align: center;
+        line-height: 30px;
+        margin: 0 0 10px 0;
+    }
+}
+
+// #################### qaynaq read PAGE END ###############
+// #################### most read ten PAGE start ###############
+.most-read-ten {
+    margin: 15px 0;
+    .mostTen-body {
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        margin-bottom: 15px;
+        .mostTen {
+            padding-bottom: 25px;
+            .mrt-number {
+                border-bottom: 1px solid $gray;
+                text-align: right;
+                font-size: 16px;
+            }
+            .mostTen-text-header {
+                ul {
+                    li {
+                        display: inline-block;
+                        font-size: 10px;
+                        color: $CatalinaBlue;
+                    }
+                }
+                .mostTen-person {
+                    &::before {
+                        font-family: FontAwesome;
+                        content: "\f007";
+                        padding-right: 5px;
+                    }
+                    &::after {
+                        font-family: FontAwesome;
+                        content: " / ";
+                        padding-left: 5px;
+                    }
+                }
+                .mostTen-date {
+                    &::before {
+                        font-family: FontAwesome;
+                        content: "\f073";
+                        padding-right: 5px;
+                    }
+                    &::after {
+                        font-family: FontAwesome;
+                        content: " / ";
+                        padding-left: 5px;
+                    }
+                }
+                .mostTen-file {
+                    &::before {
+                        font-family: FontAwesome;
+                        content: "\f15b";
+                        padding-right: 5px;
+                    }
+                }
+            }
+            .mostTen-text-body {
+                margin-top: 10px;
+                p {
+                    margin: 5px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    font-family: Roboto-Regular;
+                }
+                a {
+                    float: right;
+                    color: $DarkTangerine;
+                }
+            }
+        }
+    }
+}
+
+// #################### most read ten PAGE END ###############
+// ######### Angular page start #######
+.angular-content {
+    margin-top: 15px;
+    .angular-body {
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        margin-bottom: 15px;
+    }
+    .angular {
+        padding-bottom: 25px;
+        .angular-text-header {
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 10px;
+                    color: $CatalinaBlue;
+                }
+            }
+            .angular-person {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f007";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .angular-date {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f073";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .angular-file {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f15b";
+                    padding-right: 5px;
+                }
+            }
+        }
+        .angular-text-body {
+            margin-top: 10px;
+            p {
+                margin: 5px;
+                font-size: 14px;
+                line-height: 20px;
+                font-family: Roboto-Regular;
+            }
+            a {
+                float: right;
+                color: $DarkTangerine;
+            }
+        }
+    }
+    .angular-pagination {
+        text-align: center;
+        margin-top: 15px;
+        .pagination>.active>span {
+            background-color: $DarkTangerine;
+            border-color: $DarkTangerine;
+        }
+    }
+}
+
+// ######### Angular page end #######
+// ######### ASP.net page start #######
+.asp-content {
+    margin-top: 15px;
+    .asp-body {
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        margin-bottom: 15px;
+    }
+    .asp {
+        padding-bottom: 25px;
+        .asp-text-header {
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 10px;
+                    color: $CatalinaBlue;
+                }
+            }
+            .asp-person {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f007";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .asp-date {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f073";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .asp-file {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f15b";
+                    padding-right: 5px;
+                }
+            }
+        }
+        .asp-text-body {
+            margin-top: 10px;
+            p {
+                margin: 5px;
+                font-size: 14px;
+                line-height: 20px;
+                font-family: Roboto-Regular;
+            }
+            a {
+                float: right;
+                color: $DarkTangerine;
+            }
+        }
+    }
+    .asp-pagination {
+        text-align: center;
+        margin-top: 15px;
+        .pagination>.active>span {
+            background-color: $DarkTangerine;
+            border-color: $DarkTangerine;
+        }
+    }
+}
+
+// ######### ASP.net page end #######
+// ######### C# page start #######
+.Csharp-content {
+    margin-top: 15px;
+    .Csharp-body {
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        margin-bottom: 15px;
+    }
+    .Csharp {
+        padding-bottom: 25px;
+        .Csharp-text-header {
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 10px;
+                    color: $CatalinaBlue;
+                }
+            }
+            .Csharp-person {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f007";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .Csharp-date {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f073";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .Csharp-file {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f15b";
+                    padding-right: 5px;
+                }
+            }
+        }
+        .Csharp-text-body {
+            margin-top: 10px;
+            p {
+                margin: 5px;
+                font-size: 14px;
+                line-height: 20px;
+                font-family: Roboto-Regular;
+            }
+            a {
+                float: right;
+                color: $DarkTangerine;
+            }
+        }
+    }
+    .Csharp-pagination {
+        text-align: center;
+        margin-top: 15px;
+        .pagination>.active>span {
+            background-color: $DarkTangerine;
+            border-color: $DarkTangerine;
+        }
+    }
+}
+
+// ######### C# page end #######
+// ######### CSS page start #######
+.css-content {
+    margin-top: 15px;
+    .css-body {
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        margin-bottom: 15px;
+    }
+    .css {
+        padding-bottom: 25px;
+        .css-text-header {
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 10px;
+                    color: $CatalinaBlue;
+                }
+            }
+            .css-person {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f007";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .css-date {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f073";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .css-file {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f15b";
+                    padding-right: 5px;
+                }
+            }
+        }
+        .css-text-body {
+            margin-top: 10px;
+            p {
+                margin: 5px;
+                font-size: 14px;
+                line-height: 20px;
+                font-family: Roboto-Regular;
+            }
+            a {
+                float: right;
+                color: $DarkTangerine;
+            }
+        }
+    }
+    .css-pagination {
+        text-align: center;
+        margin-top: 15px;
+        .pagination>.active>span {
+            background-color: $DarkTangerine;
+            border-color: $DarkTangerine;
+        }
+    }
+}
+
+// ######### CSS page end #######
+// ######### Html page start #######
+.html-content {
+    margin-top: 15px;
+    .html-body {
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        margin-bottom: 15px;
+    }
+    .html {
+        padding-bottom: 25px;
+        .html-text-header {
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 10px;
+                    color: $CatalinaBlue;
+                }
+            }
+            .html-person {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f007";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .html-date {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f073";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .html-file {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f15b";
+                    padding-right: 5px;
+                }
+            }
+        }
+        .html-text-body {
+            margin-top: 10px;
+            p {
+                margin: 5px;
+                font-size: 14px;
+                line-height: 20px;
+                font-family: Roboto-Regular;
+            }
+            a {
+                float: right;
+                color: $DarkTangerine;
+            }
+        }
+    }
+    .html-pagination {
+        text-align: center;
+        margin-top: 15px;
+        .pagination>.active>span {
+            background-color: $DarkTangerine;
+            border-color: $DarkTangerine;
+        }
+    }
+}
+
+// ######### HTML page end #######
+// ######### C++ page start #######
+.cplus2-content {
+    margin-top: 15px;
+    .cplus2-body {
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        margin-bottom: 15px;
+    }
+    .cplus2 {
+        padding-bottom: 25px;
+        .cplus2-text-header {
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 10px;
+                    color: $CatalinaBlue;
+                }
+            }
+            .cplus2-person {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f007";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .cplus2-date {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f073";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .cplus2-file {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f15b";
+                    padding-right: 5px;
+                }
+            }
+        }
+        .cplus2-text-body {
+            margin-top: 10px;
+            p {
+                margin: 5px;
+                font-size: 14px;
+                line-height: 20px;
+                font-family: Roboto-Regular;
+            }
+            a {
+                float: right;
+                color: $DarkTangerine;
+            }
+        }
+    }
+    .cplus2-pagination {
+        text-align: center;
+        margin-top: 15px;
+        .pagination>.active>span {
+            background-color: $DarkTangerine;
+            border-color: $DarkTangerine;
+        }
+    }
+}
+
+// ######### C++ page end #######
+// ######### C++ page start #######
+.cplus2-content {
+    margin-top: 15px;
+    .cplus2-body {
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        margin-bottom: 15px;
+    }
+    .cplus2 {
+        padding-bottom: 25px;
+        .cplus2-text-header {
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 10px;
+                    color: $CatalinaBlue;
+                }
+            }
+            .cplus2-person {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f007";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .cplus2-date {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f073";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .cplus2-file {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f15b";
+                    padding-right: 5px;
+                }
+            }
+        }
+        .cplus2-text-body {
+            margin-top: 10px;
+            p {
+                margin: 5px;
+                font-size: 14px;
+                line-height: 20px;
+                font-family: Roboto-Regular;
+            }
+            a {
+                float: right;
+                color: $DarkTangerine;
+            }
+        }
+    }
+    .cplus2-pagination {
+        text-align: center;
+        margin-top: 15px;
+        .pagination>.active>span {
+            background-color: $DarkTangerine;
+            border-color: $DarkTangerine;
+        }
+    }
+}
+
+// ######### C++ page end #######
+// ######### java page start #######
+.java-content {
+    margin-top: 15px;
+    .java-body {
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        margin-bottom: 15px;
+    }
+    .java {
+        padding-bottom: 25px;
+        .java-text-header {
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 10px;
+                    color: $CatalinaBlue;
+                }
+            }
+            .java-person {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f007";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .java-date {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f073";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .java-file {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f15b";
+                    padding-right: 5px;
+                }
+            }
+        }
+        .java-text-body {
+            margin-top: 10px;
+            p {
+                margin: 5px;
+                font-size: 14px;
+                line-height: 20px;
+                font-family: Roboto-Regular;
+            }
+            a {
+                float: right;
+                color: $DarkTangerine;
+            }
+        }
+    }
+    .java-pagination {
+        text-align: center;
+        margin-top: 15px;
+        .pagination>.active>span {
+            background-color: $DarkTangerine;
+            border-color: $DarkTangerine;
+        }
+    }
+}
+
+// ######### java page end #######
+// ######### php page start #######
+.php-content {
+    margin-top: 15px;
+    .php-body {
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        margin-bottom: 15px;
+    }
+    .php {
+        padding-bottom: 25px;
+        .php-text-header {
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 10px;
+                    color: $CatalinaBlue;
+                }
+            }
+            .php-person {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f007";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .php-date {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f073";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .php-file {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f15b";
+                    padding-right: 5px;
+                }
+            }
+        }
+        .php-text-body {
+            margin-top: 10px;
+            p {
+                margin: 5px;
+                font-size: 14px;
+                line-height: 20px;
+                font-family: Roboto-Regular;
+            }
+            a {
+                float: right;
+                color: $DarkTangerine;
+            }
+        }
+    }
+    .php-pagination {
+        text-align: center;
+        margin-top: 15px;
+        .pagination>.active>span {
+            background-color: $DarkTangerine;
+            border-color: $DarkTangerine;
+        }
+    }
+}
+
+// ######### php page end #######
+// ######### jquery page start #######
+.jquery-content {
+    margin-top: 15px;
+    .jquery-body {
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        margin-bottom: 15px;
+    }
+    .jquery {
+        padding-bottom: 25px;
+        .jquery-text-header {
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 10px;
+                    color: $CatalinaBlue;
+                }
+            }
+            .jquery-person {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f007";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .jquery-date {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f073";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .jquery-file {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f15b";
+                    padding-right: 5px;
+                }
+            }
+        }
+        .jquery-text-body {
+            margin-top: 10px;
+            p {
+                margin: 5px;
+                font-size: 14px;
+                line-height: 20px;
+                font-family: Roboto-Regular;
+            }
+            a {
+                float: right;
+                color: $DarkTangerine;
+            }
+        }
+    }
+    .jquery-pagination {
+        text-align: center;
+        margin-top: 15px;
+        .pagination>.active>span {
+            background-color: $DarkTangerine;
+            border-color: $DarkTangerine;
+        }
+    }
+}
+
+// ######### jquery page end #######
+// ######### javascript page start #######
+.javascript-content {
+    margin-top: 15px;
+    .javascript-body {
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        margin-bottom: 15px;
+    }
+    .javascript {
+        padding-bottom: 25px;
+        .javascript-text-header {
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 10px;
+                    color: $CatalinaBlue;
+                }
+            }
+            .javascript-person {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f007";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .javascript-date {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f073";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .javascript-file {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f15b";
+                    padding-right: 5px;
+                }
+            }
+        }
+        .javascript-text-body {
+            margin-top: 10px;
+            p {
+                margin: 5px;
+                font-size: 14px;
+                line-height: 20px;
+                font-family: Roboto-Regular;
+            }
+            a {
+                float: right;
+                color: $DarkTangerine;
+            }
+        }
+    }
+    .javascript-pagination {
+        text-align: center;
+        margin-top: 15px;
+        .pagination>.active>span {
+            background-color: $DarkTangerine;
+            border-color: $DarkTangerine;
+        }
+    }
+}
+
+// ######### javascript page end #######
+// ######### sql/msql page start #######
+.sql-content {
+    margin-top: 15px;
+    .sql-body {
+        padding: 10px 20px;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        margin-bottom: 15px;
+    }
+    .sql {
+        padding-bottom: 25px;
+        .sql-text-header {
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 10px;
+                    color: $CatalinaBlue;
+                }
+            }
+            .sql-person {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f007";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .sql-date {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f073";
+                    padding-right: 5px;
+                }
+                &::after {
+                    font-family: FontAwesome;
+                    content: " / ";
+                    padding-left: 5px;
+                }
+            }
+            .sql-file {
+                &::before {
+                    font-family: FontAwesome;
+                    content: "\f15b";
+                    padding-right: 5px;
+                }
+            }
+        }
+        .sql-text-body {
+            margin-top: 10px;
+            p {
+                margin: 5px;
+                font-size: 14px;
+                line-height: 20px;
+                font-family: Roboto-Regular;
+            }
+            a {
+                float: right;
+                color: $DarkTangerine;
+            }
+        }
+    }
+    .sql-pagination {
+        text-align: center;
+        margin-top: 15px;
+        .pagination>.active>span {
+            background-color: $DarkTangerine;
+            border-color: $DarkTangerine;
+        }
+    }
+}
+
+// ######### sql/msql page end #######

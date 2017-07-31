@@ -1,0 +1,22 @@
+@import 'fonts';
+@import 'variable';
+@import 'reset';
+@mixin seperator {
+    width: 60px;
+    height: 4px;
+    margin: 8px 8px 15px 8px;
+    border-radius: 5px;
+    background: $DarkTangerine;
+}
+
+@mixin section-border {
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #E8E8E8;
+}
+
+@mixin mQ($arg) {
+    @media screen and(max-width: $arg) {
+        @content;
+    }
+}
